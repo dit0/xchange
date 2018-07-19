@@ -1,0 +1,355 @@
+/* color map*/
+/*
+dark blue- #1B215D
+
+shadow green -#1D5A67
+
+not-as-dark-blue- #2B3277
+
+dark-green -#1F98B3
+
+
+
+*/
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  /*background-color:#E4E4E4;
+  background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image:-webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, #A7A7A7),
+      color-stop(0.51, #E4E4E4)
+  );
+  background-attachment:fixed;*/
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  border: 1px solid grey;
+}
+
+/* Portrait layout (default) */
+.app {
+  text-align: center;
+  margin: 0;
+  /* offset vertical: half of image height and text area height */
+  /* offset horizontal: half of text area width */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+  overflow: visible;
+  padding: 0px;
+  text-align: center;
+}
+
+.event {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 12px;
+  margin: 0px 30px;
+  padding: 2px 0px;
+}
+
+.event.listening {
+  background-color: #333333;
+  display: block;
+}
+
+.event.received {
+  background-color: #4B946A;
+  display: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.blink {
+  animation: fade 3000ms infinite;
+  -webkit-animation: fade 3000ms infinite;
+}
+
+/*xchange css*/
+.list-header {
+  background: #2b3277;
+}
+
+a {
+  color: #fff;
+}
+
+.list-item__thumbnail {
+  width: auto;
+  height: auto;
+}
+
+.consoles_home {
+  background: #1f98b3;
+}
+
+.games-home_title {
+  color: #fff;
+}
+
+.list-item__thumbnail {
+  width: auto;
+  height: auto;
+}
+
+.consoles_home {
+  background: #1f98b3;
+}
+
+.games-home_title {
+  color: #fff;
+}
+
+.games-home {
+  width: 130px;
+  height: 200px;
+}
+
+.games-container h4 {
+  margin-left: 1rem;
+  margin-bottom: 0.2rem;
+  color: white;
+  font-family: verdana, arial, sans-serif;
+  font-weight: bold;
+}
+
+.list-item__thumbnail {
+  margin-top: 1.25rem;
+  box-shadow: 0px 3px 8px #1D5A67;
+  /*shadow green*/
+}
+
+.games-home_title {
+  margin-top: 0.4rem;
+  color: white;
+  background-color: #2b3277;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  padding: 0.2rem 0;
+  font-weight: bolder;
+  box-shadow: 0px 3px 6px #1D5A67;
+  text-transform: capitalize;
+  /*shadow green*/
+}
+
+.list-item__thumbnail {
+  width: 80%;
+  height: auto;
+}
+
+body {
+  width: 600px;
+}
+
+#searchPage {
+  /*find a way to extand search input*/
+}
+#searchPage .list {
+  background-color: #2b3277;
+  padding-top: 2rem;
+}
+#searchPage .list .list-item__center {
+  background-color: #1f98b3;
+  max-width: 70%;
+  color: white;
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+#searchPage .list .list-item__left {
+  margin-bottom: 0.75rem;
+}
+#searchPage .list .list-item__title, #searchPage .list .list-item__subtitle {
+  font-size: 1rem;
+  margin: 0.1rem 0;
+}
+#searchPage .list .list-item__thumbnail {
+  width: 100px;
+}
+#searchPage .list-header {
+  font-family: verdana, arial, Helvetica, sans-serif !important;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+#searchPage .search-container {
+  background-color: #1f98b3;
+  height: 4rem;
+  text-align: center;
+  margin-top: 10px;
+}
+#searchPage .search-container #search-input {
+  margin-top: 1.1rem;
+}
+
+/*Added by Julia*/
+.logo-small {
+  width: 100px;
+  margin: auto;
+  position: absolute;
+  z-index: 2;
+  left: 37%;
+}
+.logo-small .consoles img {
+  box-shadow: 0px 3px 15px #0F0A43;
+  border-radius: 50%;
+  height: 90%;
+}
+
+.logo-large {
+  width: 70%;
+  margin: auto;
+}
+.logo-large img {
+  box-shadow: 0px 3px 15px #0F0A43;
+  border-radius: 50%;
+}
+
+.page__background {
+  background-color: #1B215D !important;
+}
+
+.fb-login-btn {
+  width: 70%;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.login-ctn {
+  display: grid;
+  position: relative;
+}
+
+.info-field-container {
+  background-color: #1f98b3;
+  height: 60vh;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 4rem;
+  display: grid;
+}
+
+.basket {
+  align-self: center;
+}
+
+.info-field {
+  background-color: white;
+  width: 80%;
+  margin: auto;
+}
+.info-field p {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.login-btn, .continue-btn {
+  margin: 1rem auto;
+  width: 90%;
+  border-radius: 20px;
+  display: block;
+  text-align: center;
+}
+
+.input-ctn {
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+.input-ctn #user, .input-ctn #txtEmail, .input-ctn #txtPassword, .input-ctn #cnf_pss, .input-ctn #file {
+  background-color: white;
+  padding: 0.2rem;
+  width: 90%;
+}
+.input-ctn #file {
+  height: 3rem;
+}
+.input-ctn input {
+  margin: auto;
+}
+
+/*search screen styles*/
+/**/
+body, p, h1, h2, h3, h4,
+.list-item__title, .list-item__subtitle {
+  font-family: verdana, arial, Helvetica, sans-serif !important;
+  /*command is overwrittent somewhere*/
+}
+
+h1 {
+  font-weight: bold !important;
+  /*command is overwrittent somewhere*/
+  /*set different base colors to heading*/
+}
+
+.login-options a {
+  color: #17b5bc;
+  font-weight: bold;
+  line-height: 3;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

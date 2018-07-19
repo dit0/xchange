@@ -1,0 +1,99 @@
+//parial added by Julia
+
+
+
+.page__background{
+  background-color: $dark-blue!important;
+}
+
+
+//intro screen fb button
+.fb-login-btn {
+  width:70%;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+
+//login with xchange style
+
+.login-ctn {
+  display: grid;
+  position: relative;
+
+
+}
+
+.info-field-container {
+  background-color: $tertiary-color;
+  height: 60vh;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 4rem;
+  display: grid;
+
+
+}
+
+.basket {
+  align-self: center;
+
+}
+
+.info-field {
+  background-color: white;
+  width:80%;
+  margin: auto;
+
+  p {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+}
+
+           // continue-btn is from register screen
+.login-btn , .continue-btn{
+  margin: 1rem auto;
+  width: 90%;
+  border-radius: 20px;
+  display: block;
+  text-align: center;
+
+}
+
+// Regiser screen styles
+
+.input-ctn {
+  margin: auto;
+  text-align: center;
+  width:90%;
+
+  #user, #txtEmail, #txtPassword, #cnf_pss, #file{
+    background-color: white;
+    padding: .2rem;
+    width: 90%;
+  }
+
+  #file {
+    height: 3rem;
+  }
+
+ input {
+   margin: auto;
+ }
+
+}
+
+
+/*search screen styles*/
+
+
+
+
+
+
+
+
+/**/

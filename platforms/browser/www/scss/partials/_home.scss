@@ -1,0 +1,76 @@
+.list-item__thumbnail{
+    width: auto;
+    height: auto;
+}
+.consoles_home {
+	background:$tertiary-color;
+}
+.games-home_title{
+	color:$white;
+}
+
+.list-item__thumbnail{
+    width: auto;
+    height: auto;
+}
+.consoles_home {
+	background:$tertiary-color;
+}
+
+.games-home_title{
+	color:$white;
+}
+
+.games-container {
+
+}
+
+
+.games-home {
+  width:130px;
+  height: 200px;
+}
+
+.games-container h4 {
+  margin-left: 1rem;
+  margin-bottom: .2rem;
+  color: white;
+  font-family: verdana,arial,sans-serif;
+  font-weight: bold;
+
+}
+
+.list-item__thumbnail {
+  margin-top: 1.25rem;
+  box-shadow: 0px 3px 8px #1D5A67; /*shadow green*/
+
+}
+
+
+.games-home_title {
+  margin-top: .4rem;
+
+  color:white;
+  background-color:$secondary-color;
+  border-radius: 5px;
+  width:80%;
+  text-align: center;
+  padding:.2rem 0;
+  font-weight: bolder;
+  box-shadow: 0px 3px 6px #1D5A67;
+  text-transform:capitalize;
+  /*shadow green*/
+
+}
+
+.list-item__thumbnail {
+  width: 80%;
+  height: auto;
+
+}
+
+
+
+body{
+ width:600px;
+}

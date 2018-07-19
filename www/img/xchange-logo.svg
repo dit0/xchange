@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 257.06 257.06">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: #0d4439;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="128.53" y1="257.06" x2="128.53" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#55a7ff"/>
+      <stop offset="0.21" stop-color="#607ae8"/>
+      <stop offset="0.63" stop-color="#7623bc"/>
+      <stop offset="0.82" stop-color="#7f00aa"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="43.21" y1="79.27" x2="213.85" y2="177.79" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2afff0"/>
+      <stop offset="0.22" stop-color="#1bc7c9"/>
+      <stop offset="0.62" stop-color="#005d7f"/>
+    </linearGradient>
+  </defs>
+  <title>Asset 16</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle class="cls-1" cx="128.53" cy="128.53" r="128.53"/>
+        <circle class="cls-2" cx="128.53" cy="128.53" r="98.5"/>
+        <g id="logo_1" data-name="logo 1">
+          <polygon class="cls-3" points="173.55 158.56 145.71 144.38 116.78 162.35 136.66 135.71 110.34 101.02 147.35 125.25 170.26 112.9 157.44 133.67 173.55 158.56"/>
+          <polygon class="cls-3" points="218.03 69.35 207.11 90.06 190.81 93.25 218.03 69.35"/>
+          <path class="cls-3" d="M198.18,181.51,176,161.33l-.11.24-.21-.18a48.25,48.25,0,0,1-36,15.63c-25.89,0-46.88-19.52-46.88-43.61A41.94,41.94,0,0,1,106,103.05L97.88,89.68l16.88,6c7.54-4.82,15.07-5.92,24.91-5.92a48.1,48.1,0,0,1,37.15,17l11.52-11.3c-12.67-17-33.78-28.16-57.71-28.16a73.78,73.78,0,0,0-37.11,9.87l-15.6-5.59,7,11.48c-15,12-24.47,29.71-24.47,49.53,0,20.42,10.08,38.65,25.87,50.62L70.87,202l24.49-12.95a74,74,0,0,0,35.27,8.85,72.53,72.53,0,0,0,50.92-20.39Z"/>
+        </g>
+        <g id="logo_1-2" data-name="logo 1">
+          <polygon class="cls-4" points="165.59 150.72 140.2 136.83 113.81 154.44 131.95 128.33 107.95 94.33 141.7 118.08 162.59 105.97 150.9 126.33 165.59 150.72"/>
+          <polygon class="cls-4" points="206.15 63.29 196.2 83.58 181.33 86.71 206.15 63.29"/>
+          <path class="cls-4" d="M188.05,173.23l-20.27-19.79-.1.24-.2-.18A42.74,42.74,0,1,1,104,96.32L96.59,83.21,112,89.13c6.88-4.73,13.75-5.8,22.73-5.8A42.68,42.68,0,0,1,168.57,100l10.51-11.08A64,64,0,0,0,92.61,71L78.38,65.53l6.39,11.25A64,64,0,0,0,86,175L72,193.35l22.32-12.7a63.94,63.94,0,0,0,78.6-11.3Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

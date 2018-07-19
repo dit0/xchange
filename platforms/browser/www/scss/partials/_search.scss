@@ -1,0 +1,61 @@
+
+#searchPage {
+
+
+
+
+  .page-container {
+
+  }
+
+  .list {
+    background-color: $secondary-color;
+    padding-top:2rem;
+
+    .list-item__center {
+      background-color: $tertiary-color;
+      max-width: 70%;
+      color: white;
+      margin: 1rem 0;
+      padding-left: 1rem;
+    }
+
+    .list-item__left {
+     margin-bottom: .75rem;
+
+   }
+
+   .list-item__title, .list-item__subtitle  {
+    font-size: 1rem;
+    margin: .1rem 0;
+  }
+
+  .list-item__thumbnail{
+    width:100px;
+  }
+
+}
+
+.list-header {
+  font-family:  verdana,arial, Helvetica,sans-serif!important ;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+/*find a way to extand search input*/
+.search-container {
+  background-color: $tertiary-color;
+  height: 4rem;
+  text-align: center;
+  margin-top: 10px;
+
+
+  #search-input {
+   margin-top: 1.1rem;
+ }
+}
+
+
+
+}

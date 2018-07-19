@@ -1,0 +1,32 @@
+
+
+
+
+.logo-small {
+  width: 100px;
+  margin: auto;
+  position:absolute;
+   z-index: 2;
+  left: 37%;
+
+   .consoles img {
+     box-shadow: 0px 3px 15px #0F0A43;// see why shadow doesnt show
+     border-radius: 50%;
+     height: 90%;
+
+   }
+
+}
+
+
+
+.logo-large {
+ width:70%;
+ margin: auto;
+
+ img {
+   box-shadow: 0px 3px 15px #0F0A43;
+   border-radius: 50%;
+
+ }
+}

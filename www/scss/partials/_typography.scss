@@ -1,0 +1,39 @@
+//$font-family: verdana,arial, Helvetica,sans-serif;
+//couldn't define a font variable for some reason
+
+body, p, h1,h2,h3,h4,
+.list-item__title, .list-item__subtitle 
+{
+  font-family: verdana,arial, Helvetica,sans-serif !important; /*command is overwrittent somewhere*/
+}
+
+//title on openning screen
+h1 {
+  font-weight: bold !important;/*command is overwrittent somewhere*/
+
+  /*set different base colors to heading*/
+}
+
+//login screen
+
+.login-options a {
+
+  color:$forty-color;
+  font-weight: bold;
+  line-height: 3;
+
+}
+
+//login with xchange intro-title
+
+
+
+
+
+
+
+
+
+
+
+//
