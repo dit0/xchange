@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- var app = {
+ let app = {
     // Application Constructor
     initialize: function() {
       this.bindEvents();
@@ -37,9 +37,9 @@
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-      // var parentElement = document.getElementById(id);
-      // var listeningElement = parentElement.querySelector('.listening');
-      // var receivedElement = parentElement.querySelector('.received');
+      // let parentElement = document.getElementById(id);
+      // let listeningElement = parentElement.querySelector('.listening');
+      // let receivedElement = parentElement.querySelector('.received');
 
       // listeningElement.setAttribute('style', 'display:none;');
       // receivedElement.setAttribute('style', 'display:block;');
@@ -58,9 +58,9 @@ ons.disableAutoStyling();
 
 
 //fake login
-// var xlogin = function() {
-//   var username = document.getElementById('username').value;
-//   var password = document.getElementById('password').value;
+// let xlogin = function() {
+//   let username = document.getElementById('username').value;
+//   let password = document.getElementById('password').value;
 
 //   if (username === '' && password === '') {
 //     // ons.notification.alert("going");
@@ -89,7 +89,7 @@ document.addEventListener('prechange', function(event) {
 
 //message button on messages.html
 document.addEventListener('init', function(event) {
-  var page = event.target;
+  let page = event.target;
 
   if (page.id === 'messages') {
     page.querySelector('#msg1').onclick = function() {
@@ -104,7 +104,7 @@ document.addEventListener('init', function(event) {
     };
   }
 
-  var showAlert = function() {
+  let showAlert = function() {
     ons.notification.alert('xChange!');
   };
 
@@ -120,7 +120,7 @@ document.addEventListener('init', function(event) {
 // ---------------------------------------------------------------
 
  // Initialize Firebase
- var config = {
+ let config = {
   apiKey: "AIzaSyCHDgcVjF5nZGDuB7xM88v8CIT9uWmAiY0",
   authDomain: "xchange-e7223.firebaseapp.com",
   databaseURL: "https://xchange-e7223.firebaseio.com",
@@ -147,7 +147,7 @@ userRef.on("child_added", function(data){
 });
 */
 
-var xlogin = function(){
+let xlogin = function(){
  const txtEmail = document.getElementById("txtEmail");
  const txtPassword = document.getElementById("txtPassword");
  const btnLogin = document.getElementById("btnLogin");
@@ -167,7 +167,7 @@ var xlogin = function(){
   }) 
 }
 
-var register2 = function(){
+let register2 = function(){
  const txtEmail = document.getElementById("txtEmail");
  const txtPassword = document.getElementById("txtPassword");
  const btnSignUp = document.getElementById("btnSignUp");
@@ -199,9 +199,14 @@ var register2 = function(){
     promise.catch(e => console.log(e.message));
   })
 }
-var logout = function(){
+let logout = function(){
   firebase.auth().signOut();
   document.querySelector("#navigator").pushPage("index.html", {animation: 'fade'});
+ localStorage.clear();
+
+
+console.log("logout");
+
 }
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
@@ -210,6 +215,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
  if(firebaseUser){
   console.log("logged as: "+ firebaseUser.email);
   document.querySelector("#navigator").pushPage("menu_login.html", {animation: 'fade'});
+
 
 } else {
   console.log("not logged in");
@@ -220,7 +226,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 
 //image upload to database
 document.addEventListener('init', function(event) {
-  var page = event.target;
+  let page = event.target;
 
   if (page.id === 'login') {
 
@@ -234,14 +240,14 @@ $(".user").text(localStorage.getItem("username"));
 
 if (page.id === 'register') {
 
-  var auth = firebase.auth();
+  let auth = firebase.auth();
   function handleFileSelect(evt) {
-    var storageRef = firebase.storage().ref();
+    let storageRef = firebase.storage().ref();
     evt.stopPropagation();
     evt.preventDefault();
-    var file = evt.target.files[0];
+    let file = evt.target.files[0];
 
-    var metadata = {
+    let metadata = {
       'contentType': file.type
     };
 
@@ -330,14 +336,14 @@ if (page.id === 'register') {
 
     // })
 
-    var auth = firebase.auth();
+    let auth = firebase.auth();
 
     function handleFileSelect(evt) {
-      var storageRef = firebase.storage().ref();
+      let storageRef = firebase.storage().ref();
       evt.stopPropagation();
       evt.preventDefault();
-      var file = evt.target.files[0];
-      var metadata = {
+      let file = evt.target.files[0];
+      let metadata = {
         'contentType': file.type
       };
 
@@ -354,7 +360,7 @@ if (page.id === 'register') {
           $('#game-pic').attr("src", url);
           gamename = $("#game-name").val().toLowerCase();
           userGamesRef.push({
-            username: "Name test",
+            username: firebaseUser.email,
             gamename: gamename,
             gameurl: url
           });
@@ -429,8 +435,8 @@ if (page.id === 'home') {
 
 });
 //open the game info
-var  gameInfo;
-var gameProfile = function(id){
+let  gameInfo;
+let gameProfile = function(id){
   console.log("game profile was clicked "+ id);
 
   document.querySelector('#navigator').pushPage('views/gameprofile.html',{data:id
@@ -455,7 +461,7 @@ var gameProfile = function(id){
 function search(){
 
   //clear previous search
-  $(".list-item").children().remove();
+  $(".searchResults .list-item").children().remove();
   
   let search = document.getElementById('search-input').value.toLowerCase();
   console.log("search is " + search);
@@ -513,14 +519,14 @@ function register(){
 
 //facebook login - https://firebase.google.com/docs/auth/web/facebook-login
 function fblogin(){
-  var provider = new firebase.auth.FacebookAuthProvider();
+  let provider = new firebase.auth.FacebookAuthProvider();
 
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  firebase.auth().signInWithRedirect(provider).then(function(result) {
   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-  var token = result.credential.accessToken;
+  let token = result.credential.accessToken;
 
   // The signed-in user info.
-  var user = result.user;
+  let user = result.user;
 // console.log(user);
 
 //put the name, email and photo on firebase
@@ -531,12 +537,12 @@ userFacebookRef.push({
 });
 
 //put the profile pic from the fabook stored in firebase to the page
-var userpic = localStorage.setItem('userpic', user.photoURL);
+let userpic = localStorage.setItem('userpic', user.photoURL);
 console.log(localStorage.getItem("userpic"));
 $(".fbPic").attr("src", localStorage.getItem("userpic"));
 
 //name from firebase to the page
-var username = localStorage.setItem("username", user.displayName);
+let username = localStorage.setItem("username", user.displayName);
 console.log(localStorage.getItem("username"));
 $(".user").text("Welcome " + localStorage.getItem("username"));
 
@@ -544,12 +550,12 @@ $(".user").text("Welcome " + localStorage.getItem("username"));
 }).catch(function(error) {
 
   // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
+  let errorCode = error.code;
+  let errorMessage = error.message;
   // The email of the user's account used.
-  var email = error.email;
+  let email = error.email;
   // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
+  let credential = error.credential;
   // ...
 
   console.log("error mail: " + email);
@@ -563,23 +569,23 @@ console.log("error message: "+ errorMessage);
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    var token = result.credential.accessToken;
+    let token = result.credential.accessToken;
     document.querySelector("#navigator").pushPage("menu_login.html", {animation: 'fade'});
     // ...
   }
   // let userRef = firebase.database().ref('/Users');
 
   // The signed-in user info.
-  var user = result.user;
+  let user = result.user;
   console.log("User data: "+ user);
 }).catch(function(error) {
   // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
+  let errorCode = error.code;
+  let errorMessage = error.message;
   // The email of the user's account used.
-  var email = error.email;
+  let email = error.email;
   // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
+  let credential = error.credential;
   // ...
 });
 
