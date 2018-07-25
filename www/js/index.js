@@ -137,6 +137,10 @@ let userGamesRef = firebase.database().ref('/Games');
 
 
 
+
+
+
+
 //test if the database is working
 /*
 userRef.on("child_added", function(data){
@@ -148,13 +152,10 @@ userRef.on("child_added", function(data){
 */
 
 let xlogin = function(){
- const txtEmail = document.getElementById("txtEmail");
- const txtPassword = document.getElementById("txtPassword");
- const btnLogin = document.getElementById("btnLogin");
-
-
-  //login
-  btnLogin.addEventListener("click", e =>{
+  console.log("click");
+  const txtEmail = document.getElementById("txtEmail");
+  const txtPassword = document.getElementById("txtPassword");
+  const btnLogin = document.getElementById("btnLogin");
     //email and password
     const email = txtEmail.value;
     const pass = txtPassword.value;
@@ -164,16 +165,16 @@ let xlogin = function(){
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
 
-  }) 
-}
 
-let register2 = function(){
- const txtEmail = document.getElementById("txtEmail");
- const txtPassword = document.getElementById("txtPassword");
- const btnSignUp = document.getElementById("btnSignUp");
- const txtUser = document.getElementById("user");
+  }
 
- btnSignUp.addEventListener("click", e =>{
+  let register2 = function(){
+   const txtEmail = document.getElementById("txtEmail");
+   const txtPassword = document.getElementById("txtPassword");
+   const btnSignUp = document.getElementById("btnSignUp");
+   const txtUser = document.getElementById("user");
+
+   btnSignUp.addEventListener("click", e =>{
   //email and password
   const email = txtEmail.value;
   const pass = txtPassword.value;
@@ -198,14 +199,14 @@ let register2 = function(){
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
   })
-}
-let logout = function(){
+ }
+ let logout = function(){
   firebase.auth().signOut();
   document.querySelector("#navigator").pushPage("index.html", {animation: 'fade'});
- localStorage.clear();
+  localStorage.clear();
 
 
-console.log("logout");
+  console.log("logout");
 
 }
 
@@ -360,11 +361,11 @@ if (page.id === 'register') {
           $('#game-pic').attr("src", url);
           gamename = $("#game-name").val().toLowerCase();
           userGamesRef.push({
-            username: firebaseUser.email,
-            gamename: gamename,
-            gameurl: url
-          });
-
+           username: "user 2",
+           gamename: gamename,
+           gameurl: url
+         });
+          ons.notification.toast('Upload Complete ',{ timeout: 2000 });
           // [END_EXCLUDE]
         });
       }).catch(function(error) {
@@ -404,7 +405,7 @@ if (page.id === 'register') {
 
 
 
-//put the images in the storage in the homepage
+//put the images from the storage in the homepage
 if (page.id === 'home') {
 
   userGamesRef.on('child_added', function(data) {
@@ -543,7 +544,7 @@ $(".fbPic").attr("src", localStorage.getItem("userpic"));
 
 //name from firebase to the page
 let username = localStorage.setItem("username", user.displayName);
-alert(localStorage.getItem("username"));
+console.log(localStorage.getItem("username"));
 $(".user").text("Welcome " + localStorage.getItem("username"));
 
 
@@ -557,11 +558,14 @@ $(".user").text("Welcome " + localStorage.getItem("username"));
   // The firebase.auth.AuthCredential type that was used.
   let credential = error.credential;
   // ...
+  ons.notification.toast('Upload Complete ',{ timeout: 2000 });
 
-  alert("error mail: " + email);
+
+
+  ons.notification.toast("error mail: " + email);
 // console.log("error user: " + user);
-alert("error code: "+  errorCode);
-alert("error message: "+ errorMessage);
+ons.notification.toast("error code: "+  errorCode);
+ons.notification.toast("error message: "+ errorMessage);
 
 
 });
@@ -590,3 +594,18 @@ firebase.auth().getRedirectResult().then(function(result) {
 });
 
 }
+
+
+
+//messages is not working and I fucking don't know why
+/*
+let messaging = firebase.messaging();
+messaging.requestPermission().then(function(){
+  console.log("permissions");
+  return messaging.getToken();
+}).then(function(token){
+  console.log(token)
+}).catch(function(err){
+  console.log(err);
+});
+*/
