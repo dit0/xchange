@@ -543,7 +543,7 @@ $(".fbPic").attr("src", localStorage.getItem("userpic"));
 
 //name from firebase to the page
 let username = localStorage.setItem("username", user.displayName);
-console.log(localStorage.getItem("username"));
+alert(localStorage.getItem("username"));
 $(".user").text("Welcome " + localStorage.getItem("username"));
 
 
@@ -558,10 +558,10 @@ $(".user").text("Welcome " + localStorage.getItem("username"));
   let credential = error.credential;
   // ...
 
-  console.log("error mail: " + email);
+  alert("error mail: " + email);
 // console.log("error user: " + user);
-console.log("error code: "+  errorCode);
-console.log("error message: "+ errorMessage);
+alert("error code: "+  errorCode);
+alert("error message: "+ errorMessage);
 
 
 });
