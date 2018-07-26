@@ -93,20 +93,48 @@ document.addEventListener('init', function(event) {
 
   if (page.id === 'messages') {
     page.querySelector('#msg1').onclick = function() {
-      document.querySelector('#navigator').pushPage('views/settings2.html',
+      document.querySelector('#navigator').pushPage('views/chat.html',
       {
         data: {
           title: 'Message from '
         }
       }
       );
-      console.log(document.querySelector('#navigator').data());
+      //console.log(document.querySelector('#navigator').data());
     };
   }
 
-  let showAlert = function() {
-    ons.notification.alert('xChange!');
-  };
+  if (page.id === 'chat') {
+    messagesRef.off();
+    messagesRef.on('child_added', function(data){
+     const messageId = data.key;
+     const messageObj = data.val(); 
+     let message = messageObj.message;
+
+     let decorator = `
+     <p id=${messageId}>
+     ${message}
+     <button class="btn btn-danger">Delete</button>
+     </p>`;
+     $('.messages').append(decorator);
+
+     $('button').click(function() {
+      $(this).parent().fadeOut(function(){
+
+
+        let id = $(this).attr('id');
+        firebase.database().ref(`chat/${id}`).remove();
+            });//remove();
+    });
+   });
+
+
+  }
+
+
+  // let showAlert = function() {
+  //   ons.notification.alert('xChange!');
+  // };
 
   page.querySelector("#login").onclick = function(){
     document.querySelector("#navigator").pushPage('views/login.html')
@@ -134,7 +162,7 @@ firebase.initializeApp(config);
 let userRef = firebase.database().ref('/Users');
 let userFacebookRef = firebase.database().ref('/Facebook-Users');
 let userGamesRef = firebase.database().ref('/Games');
-
+let messagesRef = firebase.database().ref('/chat');
 
 
 
@@ -152,7 +180,6 @@ userRef.on("child_added", function(data){
 */
 
 let xlogin = function(){
-  console.log("click");
   const txtEmail = document.getElementById("txtEmail");
   const txtPassword = document.getElementById("txtPassword");
   const btnLogin = document.getElementById("btnLogin");
@@ -464,34 +491,55 @@ function search(){
   //clear previous search
   $(".searchResults .list-item").children().remove();
   
-  let search = document.getElementById('search-input').value.toLowerCase();
-  console.log("search is " + search);
-  userGamesRef.orderByChild('gamename').startAt(search).endAt(search + "~").on("value", function(snapshot) {
-    // console.log(snapshot.val());
-    snapshot.forEach(function(data) {
-      let searchId = data.key;
-      let searchObj = data.val();
-      let searchNameResult = searchObj.gamename;
-      let searchImgResult = searchObj.gameurl;
-      console.log(searchNameResult + searchId);
+  let searchInput = document.getElementById('search-input').value.toLowerCase();
+  console.log("search is " + searchInput);
 
-      let searchResult = `
-      <ons-list-item tappable class="list-item" id=${searchId} onclick=gameProfile(this.id)>
+  let searchObj = [];
+
+  userGamesRef.on('value',function(snapshot){
+    //put all the data from the games table into an array
+    snapshot.forEach(function(data){
+     let allGamesResults = data.val();
+     let allGamesNames = allGamesResults.gamename;
+     let allGamesUrl = allGamesResults.gameurl;
+     searchObj.push({id: data.key, gamename: allGamesNames, gameurl :allGamesUrl});
+
+   })
+
+  })
+
+  //new array only with the search 
+  let searchResult = searchObj.filter(x => x.gamename.includes(searchInput));
+  console.log(searchResult);
+
+
+  if(!searchResult.length){
+    ons.notification.toast('Game not found',{ timeout: 3000 });
+  } else{
+    //put the content of the array in the page
+    searchResult.forEach(function(data){
+      let gameSearchId = data.id;
+      let gameSearchName = data.gamename;
+      let gameSearchUrl = data.gameurl;
+
+
+      let htmlSearch = `
+      <ons-list-item tappable class="list-item" id=${gameSearchId} onclick=gameProfile(this.id)>
       <div class="left list-item__left">
-      <img class="list-item__thumbnail" src="${searchImgResult}">
+      <img class="list-item__thumbnail" src="${gameSearchUrl}">
       </div>
       <div class="center list-item__center">
-      <span class="list-item__title">${searchNameResult}</span>
+      <span class="list-item__title">${gameSearchName}</span>
       </div>
       </ons-list-item>
       `;
 
-      $(".searchResults").append(searchResult);
+      $(".searchResults").append(htmlSearch);
+    })
 
+}//ends if
 
-    });
-  });
-}
+}//ends function search 
 
 //put data on firebase table
 function register(){
@@ -597,7 +645,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 
 
 
-//messages is not working and I fucking don't know why
+//firebase messages is not working and I fucking don't know why
 /*
 let messaging = firebase.messaging();
 messaging.requestPermission().then(function(){
@@ -609,3 +657,13 @@ messaging.requestPermission().then(function(){
   console.log(err);
 });
 */
+
+function chat(){
+
+  let msgVal = $("#chat_msg").val();
+  messagesRef.push({message: msgVal});
+  $("#chat_msg input").val('').focus();
+
+
+}
+
