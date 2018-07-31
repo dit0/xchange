@@ -41,7 +41,7 @@
 }
 
 .list-item__thumbnail {
-  margin-top: 1.25rem;
+  // margin-top: 1.25rem;
   box-shadow: 0px 3px 8px #1D5A67; /*shadow green*/
 
 }
@@ -72,5 +72,10 @@
 
 
 body{
- width:600px;
+ width:100vw;
+}
+
+.toolbar-button .fa-user,
+.toolbar-button .fa-envelope{
+  color:#d1d2de
 }

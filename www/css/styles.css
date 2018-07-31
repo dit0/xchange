@@ -173,7 +173,6 @@ a {
 }
 
 .list-item__thumbnail {
-  margin-top: 1.25rem;
   box-shadow: 0px 3px 8px #1D5A67;
   /*shadow green*/
 }
@@ -197,6 +196,15 @@ a {
   height: auto;
 }
 
+body {
+  width: 100vw;
+}
+
+.toolbar-button .fa-user,
+.toolbar-button .fa-envelope {
+  color: #d1d2de;
+}
+
 #searchPage {
   /*find a way to extand search input*/
 }
@@ -211,12 +219,10 @@ a {
   margin: 1rem 0;
   padding-left: 1rem;
 }
-#searchPage .list .list-item__left {
-  margin-bottom: 0.75rem;
-}
 #searchPage .list .list-item__title, #searchPage .list .list-item__subtitle {
   font-size: 1rem;
   margin: 0.1rem 0;
+  align-self: center;
 }
 #searchPage .list .list-item__thumbnail {
   width: 100px;
@@ -243,7 +249,8 @@ a {
   margin: auto;
   position: absolute;
   z-index: 2;
-  left: 37%;
+  left: 0;
+  right: 0;
 }
 .logo-small .consoles img {
   box-shadow: 0px 3px 15px #0F0A43;
@@ -260,14 +267,45 @@ a {
   border-radius: 50%;
 }
 
+.logo-side {
+  width: 40px;
+  position: absolute;
+  left: 3%;
+  top: 10%;
+  z-index: 4;
+}
+
+#game-pic, #game-pic-up {
+  display: block;
+  margin: auto;
+}
+
+#game-pic-up {
+  background-color: #1f98b3;
+  width: 80px;
+  border-radius: 4px;
+  margin: 5px auto;
+}
+
+.list, .list-item__center {
+  background-image: none;
+}
+
 .page__background {
   background-color: #1B215D !important;
 }
 
-.fb-login-btn {
+.fb-login-btn,
+#dm {
   width: 70%;
   border-radius: 20px;
   margin-top: 1rem;
+}
+
+#dm {
+  text-align: center;
+  display: block;
+  margin: 1rem auto;
 }
 
 .login-ctn {
@@ -277,7 +315,7 @@ a {
 
 .info-field-container {
   background-color: #1f98b3;
-  height: 60vh;
+  height: 30vh;
   width: 90%;
   margin: 0 auto;
   border-radius: 15px;
@@ -300,7 +338,7 @@ a {
 }
 
 .login-btn, .continue-btn {
-  margin: 1rem auto;
+  margin: 2.5rem auto;
   width: 90%;
   border-radius: 20px;
   display: block;
@@ -325,6 +363,148 @@ a {
 }
 
 /*search screen styles*/
+.page__content {
+  align-content: center;
+}
+
+.page__content form {
+  align-content: center;
+}
+.page__content form .user-info {
+  justify-content: center;
+  align-items: center;
+}
+.page__content form .user-info img {
+  justify-content: center;
+  align-content: center;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+.page__content form .user-info span {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  padding: 1rem 0;
+  font-size: medium;
+}
+
+form h2 {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 0;
+}
+form ul {
+  margin: 0;
+  padding: 2rem;
+}
+form ul li {
+  list-style: none;
+  margin: 0.8rem 0;
+  background-color: #1f98b3;
+  padding-bottom: 1.5rem;
+}
+form ul li span {
+  display: flex;
+  padding: 0.8rem;
+  color: white;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: medium;
+  font-weight: 600;
+}
+form ul li img {
+  max-width: 60vw;
+  margin: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.games-home {
+  display: block;
+  margin: auto;
+  padding-top: 1rem;
+}
+.games-home div {
+  display: block;
+  margin: auto;
+}
+.games-home div img {
+  display: block;
+  margin: auto;
+}
+
+.thumbnail {
+  margin-bottom: 5px;
+}
+
+#messages .list-item {
+  margin: 1rem;
+  background-color: white;
+}
+
+#messages .list {
+  background-color: transparent;
+}
+
+#settings .button {
+  justify-self: center;
+  display: flex;
+  width: 90%;
+  border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+#gameprofile .gamecontainer {
+  background-color: #1f98b3;
+  padding: 1rem 0;
+}
+#gameprofile .gamecontainer img {
+  width: 70vw;
+  margin: auto;
+  display: block;
+  border-radius: 6px;
+}
+#gameprofile .gamecontainer .gameheader {
+  background-color: #2b3277;
+}
+#gameprofile .gamename {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #2b3277;
+  margin: 0 auto;
+  padding: 1em;
+  font-weight: 600;
+}
+#gameprofile .gameuser {
+  text-align: center;
+  font-size: medium;
+}
+
+.list-item__title {
+  text-transform: capitalize;
+}
+
+.upload {
+  justify-content: center;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+#game-name input {
+  text-align: center;
+}
+
+ons-tab.tabbar__item {
+  display: block !important;
+}
+
 /**/
 body, p, h1, h2, h3, h4,
 .list-item__title, .list-item__subtitle {
@@ -346,6 +526,11 @@ h1 {
 
 a {
   text-decoration: none;
+}
+
+#map-canvas {
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -459,11 +459,26 @@ if (page.id === 'home') {
 
 
 }
+if (page.id === 'gameprofile') {
+  page.querySelector('#dm').onclick = function() {
+    document.querySelector('#navigator').pushPage('views/chat.html',
+    {
+      data: {
+        title: 'Message from '
+      }
+    }
+    );
+      //console.log(document.querySelector('#navigator').data());
+    };
+  }
 
 
+  if (page.id === 'map') {
+   initMap();
+ }
 });
 //open the game info
-let  gameInfo;
+// let  gameInfo;
 let gameProfile = function(id){
   console.log("game profile was clicked "+ id);
 
@@ -667,3 +682,65 @@ function chat(){
 
 }
 
+// let map, marker, myLatlng;
+
+// function mapa() {
+
+//   let langara = {
+
+//    lat: 49.224596,
+//    lng: -123.110314
+//  } 
+//  var mapOptions = {
+//   center: langara,
+//   zoom: 18
+// };
+
+// var marker = {
+//   position: langara,
+
+//   title: "I'm here!"
+// };
+
+// map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions, marker);
+// console.log("inside");
+
+// }
+
+
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: {lat: 49.224596, lng: -123.110314},
+    zoom: 18
+  });
+  infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+          'Error: The Geolocation service failed.' :
+          'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }

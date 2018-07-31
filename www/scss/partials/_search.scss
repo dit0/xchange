@@ -21,13 +21,14 @@
     }
 
     .list-item__left {
-     margin-bottom: .75rem;
+     // margin-bottom: .75rem;
 
    }
 
    .list-item__title, .list-item__subtitle  {
     font-size: 1rem;
     margin: .1rem 0;
+    align-self: center;
   }
 
   .list-item__thumbnail{
