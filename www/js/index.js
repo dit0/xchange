@@ -459,18 +459,18 @@ if (page.id === 'home') {
 
 
 }
-// if (page.id === 'gameprofile') {
-//   page.querySelector('#dm').onclick = function() {
-//     document.querySelector('#navigator').pushPage('views/chat.html',
-//     {
-//       data: {
-//         title: 'Message from '
-//       }
-//     }
-//     );
-//       //console.log(document.querySelector('#navigator').data());
-//     };
-//   }
+if (page.id === 'gameprofile') {
+  page.querySelector('#dm').onclick = function() {
+    document.querySelector('#navigator').pushPage('views/chat.html',
+    {
+      data: {
+        title: 'Message from '
+      }
+    }
+    );
+      //console.log(document.querySelector('#navigator').data());
+    };
+  }
 
 
   if (page.id === 'map') {
