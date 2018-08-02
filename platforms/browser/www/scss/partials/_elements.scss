@@ -1,6 +1,8 @@
 //parial added by Julia
 
-
+*{
+  box-sizing:border-box;
+}
 
 .page__background{
   background-color: $dark-blue!important;
@@ -8,10 +10,16 @@
 
 
 //intro screen fb button
-.fb-login-btn {
+.fb-login-btn,
+#dm {
   width:70%;
   border-radius: 20px;
   margin-top: 1rem;
+}
+#dm{
+  text-align:center;
+  display:block;
+  margin:1rem auto;
 }
 
 
@@ -26,7 +34,7 @@
 
 .info-field-container {
   background-color: $tertiary-color;
-  height: 60vh;
+  height: 30vh;
   width: 90%;
   margin: 0 auto;
   border-radius: 15px;
@@ -55,7 +63,7 @@
 
            // continue-btn is from register screen
 .login-btn , .continue-btn{
-  margin: 1rem auto;
+  margin: 2.5rem auto;
   width: 90%;
   border-radius: 20px;
   display: block;
@@ -89,11 +97,167 @@
 
 /*search screen styles*/
 
+// Add by Andra
+.page__content{
+  // display: grid;
+  align-content: center;
+}
+.page__content form{
+
+  // display: grid;
+  align-content: center;
+
+.user-info {
+  justify-content: center;
+  align-items: center;
+  img{
+    justify-content: center;
+    align-content: center;
+    height: 40vw;
+    width: 40vw;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+  }
+  span{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    padding: 1rem 0;
+    font-size: medium;
+  }
+}
+}
+form{
+  h2{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 0;
+  }
+  ul{
+    margin: 0;
+    padding: 2rem;
+    li{
+      list-style: none;
+      margin: 0.8rem 0;
+      background-color: $tertiary-color;
+      padding-bottom: 1.5rem;
+      span{
+        display: flex;
+        padding: 0.8rem;
+        color: white;
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: medium;
+        font-weight: 600;
+      }
+      img{
+        max-width: 60vw;
+        margin: auto;
+        display: block;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+.games-home{
+  display: block;
+  margin: auto;
+  padding-top: 1rem;
+  div{
+    display: block;
+    margin: auto;
+
+    img{
+      display: block;
+      margin: auto;
+    }
 
 
+  }
+}
+.thumbnail{
+  margin-bottom: 5px
+}
+
+#messages .list-item{
+  margin: 1rem 0 ;
+  background-color: white;
+}
+#messages .list{
+  background-color: transparent;
+}
+
+#settings .button{
+justify-self: center;
+display: flex;
+width: 90%;
+border-radius:20px;
+text-align: center;
+justify-content: center;
+margin: 1rem auto;
+
+}
+#gameprofile {
+  .gamecontainer{
+    background-color: $tertiary-color;
+    padding: 1rem 0;
+
+  img{
+    width: 70vw;
+    margin: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  .gameheader{
+    background-color: $secondary-color;
+  }
+}
+  .gamename{
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: $secondary-color;
+    margin: 0 auto;
+    padding: 1em;
+    font-weight: 600;
+  }
+  .gameuser{
+    text-align: center;
+    font-size: medium;
+
+  }
+}
+.list-item__title{
+  text-transform: capitalize;
+}
+
+.upload{
+  justify-content: center;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+#game-name input{
+  text-align: center;
+}
+// .games-home:first-of-type{
+//   margin-left: 0.8rem;
+//
+// }
+// .games-home{
+//   margin-top: 0.5rem;
+// }
 
 
+//always show the icons on the bottom bar
+ons-tab.tabbar__item{
+  display:block!important;
+}
 
+.text-input--underbar{
+  color:#000;
+}
 
 
 /**/

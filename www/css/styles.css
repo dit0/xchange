@@ -58,7 +58,6 @@ body {
   height: 100%;
   margin: 0 auto;
   padding: 0px;
-  border: 1px solid grey;
 }
 
 /* Portrait layout (default) */
@@ -291,6 +290,10 @@ body {
   background-image: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .page__background {
   background-color: #1B215D !important;
 }
@@ -442,7 +445,7 @@ form ul li img {
 }
 
 #messages .list-item {
-  margin: 1rem;
+  margin: 1rem 0;
   background-color: white;
 }
 
@@ -505,6 +508,10 @@ ons-tab.tabbar__item {
   display: block !important;
 }
 
+.text-input--underbar {
+  color: #000;
+}
+
 /**/
 body, p, h1, h2, h3, h4,
 .list-item__title, .list-item__subtitle {
@@ -531,6 +538,44 @@ a {
 #map-canvas {
   height: 100%;
   width: 100%;
+}
+
+.messages {
+  padding: 0 2rem;
+  text-align: right;
+}
+.messages .btn-danger {
+  display: none;
+}
+.messages .msg {
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 20px;
+  float: right;
+  font-size: 0.9rem;
+}
+
+.chat_container {
+  width: 100%;
+  position: fixed;
+  bottom: 1rem;
+}
+
+#chat_msg {
+  background: #fff;
+  border-radius: 20px;
+  width: 70%;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  margin: 0 0.5rem;
+}
+
+#send_msg {
+  margin-top: 1rem;
+  width: 20%;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

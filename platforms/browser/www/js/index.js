@@ -105,6 +105,7 @@ document.addEventListener('init', function(event) {
   }
 
   if (page.id === 'chat') {
+    
     messagesRef.off();
     messagesRef.on('child_added', function(data){
      const messageId = data.key;
@@ -112,10 +113,10 @@ document.addEventListener('init', function(event) {
      let message = messageObj.message;
 
      let decorator = `
-     <p id=${messageId}>
+     <span id=${messageId} class=msg>
      ${message}
      <button class="btn btn-danger">Delete</button>
-     </p>`;
+     </span>`;
      $('.messages').append(decorator);
 
      $('button').click(function() {
@@ -367,6 +368,8 @@ if (page.id === 'register') {
     let auth = firebase.auth();
 
     function handleFileSelect(evt) {
+
+
       let storageRef = firebase.storage().ref();
       evt.stopPropagation();
       evt.preventDefault();
@@ -378,6 +381,10 @@ if (page.id === 'register') {
 
       // Push to child path.
       // [START oncomplete]
+
+
+
+
       storageRef.child('games-pics/' + file.name).put(file, metadata).then(function(snapshot) {
         console.log('Uploaded', snapshot.totalBytes, 'bytes.');
         console.log('File metadata:', snapshot.metadata);
@@ -386,13 +393,24 @@ if (page.id === 'register') {
           console.log('File available at', url);
           // [START_EXCLUDE]
           $('#game-pic').attr("src", url);
+
+
+
+
           gamename = $("#game-name").val().toLowerCase();
-          userGamesRef.push({
-           username: "user 2",
-           gamename: gamename,
-           gameurl: url
-         });
-          ons.notification.toast('Upload Complete ',{ timeout: 2000 });
+          if( $("#game-name").val().length === 0  ) {
+            ons.notification.toast('empty game name.',{ timeout: 2000 })
+            
+          } else{
+
+            userGamesRef.push({
+             username: "user 2",
+             gamename: gamename,
+             gameurl: url
+           });
+
+            ons.notification.toast('Upload Complete ',{ timeout: 2000 });
+        }//end if
           // [END_EXCLUDE]
         });
       }).catch(function(error) {
@@ -459,11 +477,27 @@ if (page.id === 'home') {
 
 
 }
+if (page.id === 'gameprofile') {
+  page.querySelector('#dm').onclick = function() {
+    document.querySelector('#navigator').pushPage('views/chat.html',
+    {
+      data: {
+        title: 'Message from '
+      }
+    }
+    );
+      //console.log(document.querySelector('#navigator').data());
+    };
+  }
 
 
+  if (page.id === 'map') {
+   mapa();
+ }
+ 
 });
 //open the game info
-let  gameInfo;
+// let  gameInfo;
 let gameProfile = function(id){
   console.log("game profile was clicked "+ id);
 
@@ -606,14 +640,13 @@ $(".user").text("Welcome " + localStorage.getItem("username"));
   // The firebase.auth.AuthCredential type that was used.
   let credential = error.credential;
   // ...
-  ons.notification.toast('Upload Complete ',{ timeout: 2000 });
 
 
 
-  ons.notification.toast("error mail: " + email);
+  ons.notification.toast("error mail: " + email,{ timeout: 2000 });
 // console.log("error user: " + user);
-ons.notification.toast("error code: "+  errorCode);
-ons.notification.toast("error message: "+ errorMessage);
+ons.notification.toast("error code: "+  errorCode,{ timeout: 2000 });
+ons.notification.toast("error message: "+ errorMessage,{ timeout: 2000 });
 
 
 });
@@ -667,3 +700,27 @@ function chat(){
 
 }
 
+let map, marker, myLatlng;
+
+function mapa() {
+
+  let langara = {
+
+   lat: 49.224596,
+   lng: -123.110314
+ } 
+ var mapOptions = {
+  center: langara,
+  zoom: 18
+};
+
+var marker = {
+  position: langara,
+
+  title: "I'm here!"
+};
+
+map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions, marker);
+console.log("inside");
+
+}

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>xChange V4</name>
+<widget id="com.xchange.gameapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>xChange</name>
     <description>
-       4 version of xChange App... 
+       xChange App... 
     </description>
     <author email="malucorp@gmail.com" href="http://phonegap.com">
         diego

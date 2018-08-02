@@ -5,19 +5,21 @@
 	</ons-toolbar>
 
 	<form>
-		<img class="fbPic" src="">
+		<div class="user-info">
 
-		<span class="user"></span>
-
+			<img class="fbPic" src="rdjr.png">
+			<span class="user">Bob Vance</span>
+		</div>
 
 		<h2>my games</h2>
 		<ul class="mygames">
 
 		</ul>
-		<ons-input id="game-name" modifier="underbar" type="text" placeholder="Name of the game" value="" float></ons-input>
-		<input type="file" id="game-pic-up" name="game-pic"/>
-		<img alt="" id="game-pic" src="" width="100">
-
+		<div class="upload">
+			<ons-input id="game-name" modifier="underbar" type="text" placeholder="Name of the game" value="" float></ons-input>
+			<input type="file" id="game-pic-up" name="game-pic"/>
+			<img alt="" id="game-pic" src="" width="100" style="display: none;">
+		</div>
 		<!-- <ons-button type="submit" class="submit-game-pic">Save</ons-button> -->
 
 	</form>

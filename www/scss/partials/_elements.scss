@@ -1,6 +1,8 @@
 //parial added by Julia
 
-
+*{
+  box-sizing:border-box;
+}
 
 .page__background{
   background-color: $dark-blue!important;
@@ -180,7 +182,7 @@ form{
 }
 
 #messages .list-item{
-  margin: 1rem;
+  margin: 1rem 0 ;
   background-color: white;
 }
 #messages .list{
@@ -253,7 +255,9 @@ ons-tab.tabbar__item{
   display:block!important;
 }
 
-
+.text-input--underbar{
+  color:#000;
+}
 
 
 /**/

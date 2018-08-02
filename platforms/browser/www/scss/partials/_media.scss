@@ -6,8 +6,9 @@
   width: 100px;
   margin: auto;
   position:absolute;
-   z-index: 2;
-  left: 37%;
+  z-index: 2;
+  left: 0;
+  right: 0;
 
    .consoles img {
      box-shadow: 0px 3px 15px #0F0A43;// see why shadow doesnt show
@@ -29,4 +30,28 @@
    border-radius: 50%;
 
  }
+}
+//added by Andra
+.logo-side{
+  width: 40px;
+  position: absolute;
+  left: 3%;
+  top: 10%;
+  z-index: 4;
+}
+#game-pic, #game-pic-up{
+
+    display: block;
+    margin: auto;
+
+}
+#game-pic-up{
+  background-color: $tertiary-color;
+  width: 80px;
+  border-radius: 4px;
+  margin: 5px auto;
+}
+
+.list, .list-item__center{
+  background-image: none;
 }
