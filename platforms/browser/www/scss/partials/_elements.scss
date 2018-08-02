@@ -32,7 +32,7 @@
 
 }
 
-.info-field-container {
+#login .info-field-container {
   background-color: $tertiary-color;
   height: 30vh;
   width: 90%;
@@ -42,6 +42,16 @@
   display: grid;
 
 
+}
+
+#register .info-field-container{
+   background-color: $tertiary-color;
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 4rem;
+  display: grid;
 }
 
 .basket {
@@ -235,7 +245,7 @@ margin: 1rem auto;
 
 .upload{
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 2rem auto;
   text-align: center;
 }
 #game-name input{
@@ -257,6 +267,9 @@ ons-tab.tabbar__item{
 
 .text-input--underbar{
   color:#000;
+}
+#game-name input{
+  color:#fff;
 }
 
 

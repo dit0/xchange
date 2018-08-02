@@ -336,8 +336,8 @@ if (page.id === 'register') {
   //profile page
   if (page.id === 'profile') {
 
-    $(".fbPic").attr("src", localStorage.getItem("userpic"));
-    $(".user").text(localStorage.getItem("username"));
+   // $(".fbPic").attr("src", localStorage.getItem("userpic"));
+    //$(".user").text(localStorage.getItem("username"));
 
 
     userGamesRef.on('child_added', function(data) {

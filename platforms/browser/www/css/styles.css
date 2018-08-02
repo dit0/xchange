@@ -316,9 +316,19 @@ body {
   position: relative;
 }
 
-.info-field-container {
+#login .info-field-container {
   background-color: #1f98b3;
   height: 30vh;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 4rem;
+  display: grid;
+}
+
+#register .info-field-container {
+  background-color: #1f98b3;
+  height: auto;
   width: 90%;
   margin: 0 auto;
   border-radius: 15px;
@@ -496,7 +506,7 @@ form ul li img {
 
 .upload {
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 2rem auto;
   text-align: center;
 }
 
@@ -510,6 +520,10 @@ ons-tab.tabbar__item {
 
 .text-input--underbar {
   color: #000;
+}
+
+#game-name input {
+  color: #fff;
 }
 
 /**/
@@ -562,6 +576,7 @@ a {
   width: 100%;
   position: fixed;
   bottom: 1rem;
+  text-align: center;
 }
 
 #chat_msg {
