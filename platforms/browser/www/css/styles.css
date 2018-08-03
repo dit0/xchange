@@ -451,7 +451,7 @@ form ul li img {
 }
 
 .thumbnail {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem !important;
 }
 
 #messages .list-item {
@@ -526,6 +526,19 @@ ons-tab.tabbar__item {
   color: #fff;
 }
 
+#settings .page__content {
+  padding: 0 1rem;
+}
+#settings .list {
+  background: #1b215d;
+}
+#settings .list .list-header {
+  background: #1b215d;
+}
+#settings .list .list-item {
+  background: #fff;
+}
+
 /**/
 body, p, h1, h2, h3, h4,
 .list-item__title, .list-item__subtitle {
@@ -575,8 +588,11 @@ a {
 .chat_container {
   width: 100%;
   position: fixed;
-  bottom: 1rem;
+  bottom: 0;
   text-align: center;
+  padding-top: 0.5rem;
+  background: #1b215d;
+  padding-bottom: 1rem;
 }
 
 #chat_msg {

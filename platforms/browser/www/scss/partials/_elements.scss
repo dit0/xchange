@@ -45,13 +45,13 @@
 }
 
 #register .info-field-container{
-   background-color: $tertiary-color;
-  height: auto;
-  width: 90%;
-  margin: 0 auto;
-  border-radius: 15px;
-  margin-top: 4rem;
-  display: grid;
+ background-color: $tertiary-color;
+ height: auto;
+ width: 90%;
+ margin: 0 auto;
+ border-radius: 15px;
+ margin-top: 4rem;
+ display: grid;
 }
 
 .basket {
@@ -71,7 +71,7 @@
 
 }
 
-           // continue-btn is from register screen
+// continue-btn is from register screen
 .login-btn , .continue-btn{
   margin: 2.5rem auto;
   width: 90%;
@@ -98,7 +98,7 @@
     height: 3rem;
   }
 
- input {
+  input {
    margin: auto;
  }
 
@@ -117,27 +117,27 @@
   // display: grid;
   align-content: center;
 
-.user-info {
-  justify-content: center;
-  align-items: center;
-  img{
+  .user-info {
     justify-content: center;
-    align-content: center;
-    height: 40vw;
-    width: 40vw;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: auto;
+    align-items: center;
+    img{
+      justify-content: center;
+      align-content: center;
+      height: 40vw;
+      width: 40vw;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: auto;
+    }
+    span{
+      justify-content: center;
+      align-content: center;
+      display: flex;
+      padding: 1rem 0;
+      font-size: medium;
+    }
   }
-  span{
-    justify-content: center;
-    align-content: center;
-    display: flex;
-    padding: 1rem 0;
-    font-size: medium;
-  }
-}
 }
 form{
   h2{
@@ -188,7 +188,7 @@ form{
   }
 }
 .thumbnail{
-  margin-bottom: 5px
+  margin-bottom: .5rem!important
 }
 
 #messages .list-item{
@@ -200,13 +200,13 @@ form{
 }
 
 #settings .button{
-justify-self: center;
-display: flex;
-width: 90%;
-border-radius:20px;
-text-align: center;
-justify-content: center;
-margin: 1rem auto;
+  justify-self: center;
+  display: flex;
+  width: 90%;
+  border-radius:20px;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem auto;
 
 }
 #gameprofile {
@@ -214,16 +214,16 @@ margin: 1rem auto;
     background-color: $tertiary-color;
     padding: 1rem 0;
 
-  img{
-    width: 70vw;
-    margin: auto;
-    display: block;
-    border-radius: 6px;
+    img{
+      width: 70vw;
+      margin: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .gameheader{
+      background-color: $secondary-color;
+    }
   }
-  .gameheader{
-    background-color: $secondary-color;
-  }
-}
   .gamename{
     font-size: 2rem;
     text-align: center;
@@ -252,25 +252,40 @@ margin: 1rem auto;
   text-align: center;
 }
 // .games-home:first-of-type{
-//   margin-left: 0.8rem;
-//
-// }
-// .games-home{
-//   margin-top: 0.5rem;
-// }
+  //   margin-left: 0.8rem;
+  //
+  // }
+  // .games-home{
+    //   margin-top: 0.5rem;
+    // }
 
 
-//always show the icons on the bottom bar
-ons-tab.tabbar__item{
-  display:block!important;
-}
+    //always show the icons on the bottom bar
+    ons-tab.tabbar__item{
+      display:block!important;
+    }
 
-.text-input--underbar{
-  color:#000;
-}
-#game-name input{
-  color:#fff;
-}
+    .text-input--underbar{
+      color:#000;
+    }
+    #game-name input{
+      color:#fff;
+    }
 
+    #settings{
+      .page__content{
+        padding:0 1rem;
+      }
+      .list{
+        background:#1b215d;
 
-/**/
+        .list-header{
+          background:#1b215d;
+        }
+
+        .list-item{
+          background:#fff;
+        }
+      }
+    }
+    /**/
